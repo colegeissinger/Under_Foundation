@@ -1,12 +1,12 @@
 <?php
 	/**
-	 * WIMP Theme Customizer
+	 * under_foundation Theme Customizer
 	 *
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
+	 * @package Under_Foundation
+	 * @author Cole Geissinger <cole@colegeissinger.com>
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
 
 
@@ -17,14 +17,14 @@
 	 * @return void
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
-	function wimp_customize_register( $wp_customize ) {
+	function under_foundation_customize_register( $wp_customize ) {
 		$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 		$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 		$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	}
-	add_action( 'customize_register', 'wimp_customize_register' );
+	add_action( 'customize_register', 'under_foundation_customize_register' );
 
 
 	/**
@@ -32,9 +32,9 @@
 	 * @return void
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
-	function wimp_customize_preview_js() {
-		wp_enqueue_script( 'wimp_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+	function under_foundation_customize_preview_js() {
+		wp_enqueue_script( 'under_foundation_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 	}
-	add_action( 'customize_preview_init', 'wimp_customize_preview_js' );
+	add_action( 'customize_preview_init', 'under_foundation_customize_preview_js' );

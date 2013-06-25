@@ -3,11 +3,11 @@
 	 * Jetpack Compatibility File
 	 * See: http://jetpack.me/
 	 *
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
+	 * @package Under_Foundation
+	 * @author Cole Geissinger <cole@colegeissinger.com>
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
 
 	/**
@@ -15,12 +15,12 @@
 	 * @return void
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
-	function wimp_jetpack_setup() {
+	function under_foundation_jetpack_setup() {
 		add_theme_support( 'infinite-scroll', array(
 			'container' => 'content',
 			'footer'    => 'page',
 		) );
 	}
-	add_action( 'after_setup_theme', 'wimp_jetpack_setup' );
+	add_action( 'after_setup_theme', 'under_foundation_jetpack_setup' );

@@ -4,11 +4,11 @@
 	 *
 	 * Eventually, some of the functionality here could be replaced by core features
 	 *
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
+	 * @package Under_Foundation
+	 * @author Cole Geissinger <cole@colegeissinger.com>
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
 
 
@@ -18,16 +18,16 @@
 	 * @return Array
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
-	function wimp_page_menu_args( $args ) {
+	function under_foundation_page_menu_args( $args ) {
 
 		$args['show_home'] = true;
 
 		return $args;
 
 	}
-	add_filter( 'wp_page_menu_args', 'wimp_page_menu_args' );
+	add_filter( 'wp_page_menu_args', 'under_foundation_page_menu_args' );
 
 
 	/**
@@ -36,9 +36,9 @@
 	 * @return Array
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
-	function wimp_body_classes( $classes ) {
+	function under_foundation_body_classes( $classes ) {
 
 		// Adds a class of group-blog to blogs with more than 1 published author
 		if ( is_multi_author() )
@@ -47,7 +47,7 @@
 		return $classes;
 
 	}
-	add_filter( 'body_class', 'wimp_body_classes' );
+	add_filter( 'body_class', 'under_foundation_body_classes' );
 
 
 	/**
@@ -57,9 +57,9 @@
 	 * @return String
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
-	function wimp_enhanced_image_navigation( $url, $id ) {
+	function under_foundation_enhanced_image_navigation( $url, $id ) {
 
 		if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
 			return $url;
@@ -72,7 +72,7 @@
 		return $url;
 
 	}
-	add_filter( 'attachment_link', 'wimp_enhanced_image_navigation', 10, 2 );
+	add_filter( 'attachment_link', 'under_foundation_enhanced_image_navigation', 10, 2 );
 
 
 	/**
@@ -82,9 +82,9 @@
 	 * @return String
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
-	function wimp_wp_title( $title, $sep ) {
+	function under_foundation_wp_title( $title, $sep ) {
 
 		global $page, $paged;
 
@@ -102,9 +102,9 @@
 
 		// Add a page number if necessary:
 		if ( $paged >= 2 || $page >= 2 )
-			$title .= " $sep " . sprintf( __( 'Page %s', 'wimp' ), max( $paged, $page ) );
+			$title .= " $sep " . sprintf( __( 'Page %s', 'under_foundation' ), max( $paged, $page ) );
 
 		return $title;
 
 	}
-	add_filter( 'wp_title', 'wimp_wp_title', 10, 2 );
+	add_filter( 'wp_title', 'under_foundation_wp_title', 10, 2 );

@@ -2,11 +2,11 @@
 	/**
 	 * The template for displaying 404 pages (Not Found).
 	 *
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
+	 * @package Under_Foundation
+	 * @author Cole Geissinger <cole@colegeissinger.com>
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
 
 	get_header(); ?>
@@ -16,19 +16,19 @@
 
 				<article id="post-0" class="post not-found">
 					<header class="entry-header">
-						<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'wimp' ); ?></h1>
-					</header><!-- .entry-header -->
+						<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'under_foundation' ); ?></h1>
+					</header><!--[END .entry-header]-->
 
 					<div class="entry-content">
-						<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'wimp' ); ?></p>
+						<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'under_foundation' ); ?></p>
 
 						<?php get_search_form(); ?>
 
 						<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
-						<?php if ( wimp_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
+						<?php if ( under_foundation_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 						<div class="widget widget_categories">
-							<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'wimp' ); ?></h2>
+							<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'under_foundation' ); ?></h2>
 							<ul>
 							<?php
 								wp_list_categories( array(
@@ -40,21 +40,21 @@
 								) );
 							?>
 							</ul>
-						</div><!-- .widget -->
+						</div><!--[END .widget]-->
 						<?php endif; ?>
 
 						<?php
 						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'wimp' ), convert_smilies( ':)' ) ) . '</p>';
+						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'under_foundation' ), convert_smilies( ':)' ) ) . '</p>';
 						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 						?>
 
 						<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
 
-					</div><!-- .entry-content -->
-				</article><!-- #post-0 .post .not-found -->
+					</div><!--[END .entry-content]-->
+				</article><!--[END #post-0 .post .not-found]-->
 
-			</div><!-- #content -->
-		</div><!-- #primary -->
+			</div><!--[END #content]-->
+		</div><!--[END #primary]-->
 
 	<?php get_footer(); ?>

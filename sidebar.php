@@ -2,11 +2,11 @@
 	/**
 	 * The Sidebar containing the main widget areas.
 	 *
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
+	 * @package Under_Foundation
+	 * @author Cole Geissinger <cole@colegeissinger.com>
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
 ?>
 	<div id="secondary" class="widget-area" role="complementary">
@@ -18,14 +18,14 @@
 			</aside>
 
 			<aside id="archives" class="widget">
-				<h1 class="widget-title"><?php _e( 'Archives', 'wimp' ); ?></h1>
+				<h1 class="widget-title"><?php _e( 'Archives', 'under_foundation' ); ?></h1>
 				<ul>
 					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 				</ul>
 			</aside>
 
 			<aside id="meta" class="widget">
-				<h1 class="widget-title"><?php _e( 'Meta', 'wimp' ); ?></h1>
+				<h1 class="widget-title"><?php _e( 'Meta', 'under_foundation' ); ?></h1>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>
@@ -34,4 +34,4 @@
 			</aside>
 
 		<?php endif; // end sidebar widget area ?>
-	</div><!-- #secondary -->
+	</div><!--[END #secondary]-->

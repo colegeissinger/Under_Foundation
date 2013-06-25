@@ -4,11 +4,11 @@
 	 *
 	 * Displays all of the <head> section and everything up till <div id="main">
 	 *
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
+	 * @package Under_Foundation
+	 * @author Cole Geissinger <cole@colegeissinger.com>
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
 ?>
 <!DOCTYPE html>
@@ -37,11 +37,11 @@
 			</div>
 
 			<nav id="site-navigation" class="navigation-main" role="navigation">
-				<h1 class="menu-toggle"><?php _e( 'Menu', 'wimp' ); ?></h1>
-				<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'wimp' ); ?>"><?php _e( 'Skip to content', 'wimp' ); ?></a></div>
+				<h1 class="menu-toggle"><?php _e( 'Menu', 'under_foundation' ); ?></h1>
+				<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'under_foundation' ); ?>"><?php _e( 'Skip to content', 'under_foundation' ); ?></a></div>
 
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav><!-- #site-navigation -->
-		</header><!-- #masthead -->
+			</nav><!--[END #site-navigation]-->
+		</header><!--[END #masthead]-->
 
 		<div id="main" class="site-main">

@@ -1,24 +1,24 @@
 <?php
 	/**
-	 * WIMP functions and definitions
+	 * under_foundation functions and definitions
 	 *
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
+	 * @package Under_Foundation
+	 * @author Cole Geissinger <cole@colegeissinger.com>
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
 
 
 	// Set the theme version variable
-	$wimp_theme_version = '2.0';
+	$under_foundation_theme_version = '1.0';
 
 
 	/**
 	 * Set the content width based on the theme's design and stylesheet.
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
 	if ( ! isset( $content_width ) )
 		$content_width = 640; /* pixels */
@@ -31,10 +31,10 @@
 	 * support post thumbnails.
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
-	if ( ! function_exists( 'wimp_setup' ) ) :
-		function wimp_setup() {
+	if ( ! function_exists( 'under_foundation_setup' ) ) :
+		function under_foundation_setup() {
 
 			// Add default posts and comments RSS feed links to head
 			add_theme_support( 'automatic-feed-links' );
@@ -44,14 +44,14 @@
 
 			// Add our WordPress Menus
 			register_nav_menus( array(
-				'primary' => __( 'Primary Menu', 'wimp' ),
+				'primary' => __( 'Primary Menu', 'under_foundation' ),
 			) );
 
 			// Enable support for Post Formats
 			add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 		}
 	endif;
-	add_action( 'after_setup_theme', 'wimp_setup' );
+	add_action( 'after_setup_theme', 'under_foundation_setup' );
 
 
 	/**
@@ -59,11 +59,11 @@
 	 * @return void
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
-	function wimp_widgets_init() {
+	function under_foundation_widgets_init() {
 		register_sidebar( array(
-			'name'          => __( 'Sidebar', 'wimp' ),
+			'name'          => __( 'Sidebar', 'under_foundation' ),
 			'id'            => 'sidebar-1',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
@@ -71,24 +71,24 @@
 			'after_title'   => '</h1>',
 		) );
 	}
-	add_action( 'widgets_init', 'wimp_widgets_init' );
+	add_action( 'widgets_init', 'under_foundation_widgets_init' );
 
 	/**
 	 * Enqueue scripts and styles
 	 * @return void
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
-	function wimp_scripts() {
-		global $wimp_theme_version;
+	function under_foundation_scripts() {
+		global $under_foundation_theme_version;
 
 		// Load our stylesheets
-		wp_enqueue_style( 'wimp-style', get_template_directory_uri() . '/css/app.css', null, $wimp_theme_version );
+		wp_enqueue_style( 'under_foundation-style', get_template_directory_uri() . '/css/app.css', null, $under_foundation_theme_version );
 
 		// Load our Scripts
-		wp_enqueue_script( 'wimp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), $wimp_theme_version, true );
-		wp_enqueue_script( 'wimp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), $wimp_theme_version, true );
+		wp_enqueue_script( 'under_foundation-navigation', get_template_directory_uri() . '/js/navigation.js', array(), $under_foundation_theme_version, true );
+		wp_enqueue_script( 'under_foundation-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), $under_foundation_theme_version, true );
 
 		// Load only when viewing single.php & comments are enabled and threaded comments is enabled
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
@@ -96,6 +96,6 @@
 
 		// Load only when viewing single.php & the attachment file is an image
 		if ( is_singular() && wp_attachment_is_image() )
-			wp_enqueue_script( 'wimp-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), $wimp_theme_version );
+			wp_enqueue_script( 'under_foundation-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), $under_foundation_theme_version );
 	}
-	add_action( 'wp_enqueue_scripts', 'wimp_scripts' );
+	add_action( 'wp_enqueue_scripts', 'under_foundation_scripts' );

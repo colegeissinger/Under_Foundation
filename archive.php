@@ -4,11 +4,11 @@
 	 *
 	 * Learn more: http://codex.wordpress.org/Template_Hierarchy
 	 *
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
+	 * @package Under_Foundation
+	 * @author Cole Geissinger <cole@colegeissinger.com>
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
 
 	get_header(); ?>
@@ -22,17 +22,17 @@
 					<h1 class="page-title">
 						<?php
 							if ( is_category() ) :
-								printf( __( 'Category Archives: %s', 'wimp' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+								printf( __( 'Category Archives: %s', 'under_foundation' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
 							elseif ( is_tag() ) :
-								printf( __( 'Tag Archives: %s', 'wimp' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+								printf( __( 'Tag Archives: %s', 'under_foundation' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 
 							elseif ( is_author() ) :
 								/* Queue the first post, that way we know
 								 * what author we're dealing with (if that is the case).
 								*/
 								the_post();
-								printf( __( 'Author Archives: %s', 'wimp' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
+								printf( __( 'Author Archives: %s', 'under_foundation' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
 								/* Since we called the_post() above, we need to
 								 * rewind the loop back to the beginning that way
 								 * we can run the loop properly, in full.
@@ -40,31 +40,31 @@
 								rewind_posts();
 
 							elseif ( is_day() ) :
-								printf( __( 'Daily Archives: %s', 'wimp' ), '<span>' . get_the_date() . '</span>' );
+								printf( __( 'Daily Archives: %s', 'under_foundation' ), '<span>' . get_the_date() . '</span>' );
 
 							elseif ( is_month() ) :
-								printf( __( 'Monthly Archives: %s', 'wimp' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+								printf( __( 'Monthly Archives: %s', 'under_foundation' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
 							elseif ( is_year() ) :
-								printf( __( 'Yearly Archives: %s', 'wimp' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+								printf( __( 'Yearly Archives: %s', 'under_foundation' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
 							elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-								_e( 'Asides', 'wimp' );
+								_e( 'Asides', 'under_foundation' );
 
 							elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-								_e( 'Images', 'wimp');
+								_e( 'Images', 'under_foundation');
 
 							elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-								_e( 'Videos', 'wimp' );
+								_e( 'Videos', 'under_foundation' );
 
 							elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-								_e( 'Quotes', 'wimp' );
+								_e( 'Quotes', 'under_foundation' );
 
 							elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-								_e( 'Links', 'wimp' );
+								_e( 'Links', 'under_foundation' );
 
 							else :
-								_e( 'Archives', 'wimp' );
+								_e( 'Archives', 'under_foundation' );
 
 							endif;
 						?>
@@ -86,7 +86,7 @@
 
 						endif;
 					?>
-				</header><!-- .page-header -->
+				</header><!--[END .page-header]-->
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -101,7 +101,7 @@
 
 				<?php endwhile; ?>
 
-				<?php wimp_content_nav( 'nav-below' ); ?>
+				<?php under_foundation_content_nav( 'nav-below' ); ?>
 
 			<?php else : ?>
 
@@ -109,8 +109,8 @@
 
 			<?php endif; ?>
 
-			</div><!-- #content -->
-		</section><!-- #primary -->
+			</div><!--[END #content]-->
+		</section><!--[END #primary]-->
 
-	<?php get_sidebar(); ?>
+		<?php get_sidebar(); ?>
 	<?php get_footer(); ?>

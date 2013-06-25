@@ -7,11 +7,11 @@
 	 * and that other 'pages' on your WordPress site will use a
 	 * different template.
 	 *
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
+	 * @package Under_Foundation
+	 * @author Cole Geissinger <cole@colegeissinger.com>
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
 
 	get_header(); ?>
@@ -31,8 +31,8 @@
 
 				<?php endwhile; // end of the loop. ?>
 
-			</div><!-- #content -->
-		</div><!-- #primary -->
+			</div><!--[END #content]-->
+		</div><!--[END #primary]-->
 
-	<?php get_sidebar(); ?>
+		<?php get_sidebar(); ?>
 	<?php get_footer(); ?>

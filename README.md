@@ -1,3 +1,3 @@
-WIMP Website.
+Under_Foundation.
 
-This is the new awesome goodness that will be WIMP! beawimp.org
+The beautiful offspring of Underscores and Foundation 4. This is a WordPress starter theme for Developers.

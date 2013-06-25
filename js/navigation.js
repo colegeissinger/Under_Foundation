@@ -3,11 +3,11 @@
  *
  * Handles toggling the navigation menu for small screens.
  *
- * @package WIMP
- * @author Cole Geissinger <cole@beawimp.org>
+ * @package Under_Foundation
+ * @author Cole Geissinger <cole@colegeissinger.com>
  *
  * @version 1.0
- * @since   2.0
+ * @since   1.0
  */
 ( function() {
 	var container = document.getElementById( 'site-navigation' );

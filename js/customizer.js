@@ -2,11 +2,12 @@
  * Theme Customizer enhancements for a better user experience.
  *
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
- * @package WIMP
- * @author Cole Geissinger <cole@beawimp.org>
+ *
+ * @package Under_Foundation
+ * @author Cole Geissinger <cole@colegeissinger.com>
  *
  * @version 1.0
- * @since   2.0
+ * @since   1.0
  */
 
 ( function( $ ) {

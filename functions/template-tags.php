@@ -4,11 +4,11 @@
 	 *
 	 * Eventually, some of the functionality here could be replaced by core features
 	 *
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
+	 * @package Under_Foundation
+	 * @author Cole Geissinger <cole@colegeissinger.com>
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
 
 	/**
@@ -17,10 +17,10 @@
 	 * @return Void
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
-	if ( ! function_exists( 'wimp_content_nav' ) ) :
-		function wimp_content_nav( $nav_id ) {
+	if ( ! function_exists( 'under_foundation_content_nav' ) ) :
+		function under_foundation_content_nav( $nav_id ) {
 
 			global $wp_query, $post;
 
@@ -39,25 +39,25 @@
 
 			$nav_class = ( is_single() ) ? 'navigation-post' : 'navigation-paging'; ?>
 			<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
-				<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'wimp' ); ?></h1>
+				<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'under_foundation' ); ?></h1>
 
 				<?php
 					if ( is_single() ) : // navigation links for single posts
 
-						previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'wimp' ) . '</span> %title' );
-						next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'wimp' ) . '</span>' );
+						previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'under_foundation' ) . '</span> %title' );
+						next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'under_foundation' ) . '</span>' );
 
 					elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages
 
 						if ( get_next_posts_link() ) : ?>
 							<div class="nav-previous">
-								<?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'wimp' ) ); ?>
+								<?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'under_foundation' ) ); ?>
 							</div>
 						<?php endif;
 
 						if ( get_previous_posts_link() ) : ?>
 							<div class="nav-next">
-								<?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'wimp' ) ); ?>
+								<?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'under_foundation' ) ); ?>
 							</div>
 						<?php endif;
 
@@ -66,7 +66,7 @@
 
 			</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
 		<?php }
-	endif; // wimp_content_nav
+	endif; // under_foundation_content_nav
 
 
 	/**
@@ -79,17 +79,17 @@
 	 * @return Mixed
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
-	if ( ! function_exists( 'wimp_comment' ) ) :
-		function wimp_comment( $comment, $args, $depth ) {
+	if ( ! function_exists( 'under_foundation_comment' ) ) :
+		function under_foundation_comment( $comment, $args, $depth ) {
 			$GLOBALS['comment'] = $comment;
 
 			if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 
 				<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 					<div class="comment-body">
-						<?php _e( 'Pingback:', 'wimp' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'wimp' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php _e( 'Pingback:', 'under_foundation' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'under_foundation' ), '<span class="edit-link">', '</span>' ); ?>
 					</div>
 
 			<?php else : ?>
@@ -100,20 +100,20 @@
 							<div class="comment-author vcard">
 								<?php if ( 0 != $args['avatar_size'] )
 									echo get_avatar( $comment, $args['avatar_size'] ); ?>
-								<?php printf( __( '%s <span class="says">says:</span>', 'wimp' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+								<?php printf( __( '%s <span class="says">says:</span>', 'under_foundation' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 							</div><!-- .comment-author -->
 
 							<div class="comment-metadata">
 								<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 									<time datetime="<?php comment_time( 'c' ); ?>">
-										<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'wimp' ), get_comment_date(), get_comment_time() ); ?>
+										<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'under_foundation' ), get_comment_date(), get_comment_time() ); ?>
 									</time>
 								</a>
-								<?php edit_comment_link( __( 'Edit', 'wimp' ), '<span class="edit-link">', '</span>' ); ?>
+								<?php edit_comment_link( __( 'Edit', 'under_foundation' ), '<span class="edit-link">', '</span>' ); ?>
 							</div><!-- .comment-metadata -->
 
 							<?php if ( '0' == $comment->comment_approved ) : ?>
-								<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'wimp' ); ?></p>
+								<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'under_foundation' ); ?></p>
 							<?php endif; ?>
 						</footer><!-- .comment-meta -->
 
@@ -136,12 +136,12 @@
 	 * @return void
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
-	if ( ! function_exists( 'wimp_the_attached_image' ) ) :
-		function wimp_the_attached_image() {
+	if ( ! function_exists( 'under_foundation_the_attached_image' ) ) :
+		function under_foundation_the_attached_image() {
 			$post                = get_post();
-			$attachment_size     = apply_filters( 'wimp_attachment_size', array( 1200, 1200 ) );
+			$attachment_size     = apply_filters( 'under_foundation_attachment_size', array( 1200, 1200 ) );
 			$next_attachment_url = wp_get_attachment_url();
 
 			/**
@@ -187,17 +187,17 @@
 	 * @return void
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
-	if ( ! function_exists( 'wimp_posted_on' ) ) :
-		function wimp_posted_on() {
-			printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'wimp' ),
+	if ( ! function_exists( 'under_foundation_posted_on' ) ) :
+		function under_foundation_posted_on() {
+			printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'under_foundation' ),
 				esc_url( get_permalink() ),
 				esc_attr( get_the_time() ),
 				esc_attr( get_the_date( 'c' ) ),
 				esc_html( get_the_date() ),
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				esc_attr( sprintf( __( 'View all posts by %s', 'wimp' ), get_the_author() ) ),
+				esc_attr( sprintf( __( 'View all posts by %s', 'under_foundation' ), get_the_author() ) ),
 				get_the_author()
 			);
 		}
@@ -208,9 +208,9 @@
 	 * @return Boolean
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
-	function wimp_categorized_blog() {
+	function under_foundation_categorized_blog() {
 		if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 			// Create an array of all the categories that are attached to posts
 			$all_the_cool_cats = get_categories( array(
@@ -224,24 +224,24 @@
 		}
 
 		if ( '1' != $all_the_cool_cats ) {
-			// This blog has more than 1 category so wimp_categorized_blog should return true
+			// This blog has more than 1 category so under_foundation_categorized_blog should return true
 			return true;
 		} else {
-			// This blog has only 1 category so wimp_categorized_blog should return false
+			// This blog has only 1 category so under_foundation_categorized_blog should return false
 			return false;
 		}
 	}
 
 	/**
-	 * Flush out the transients used in wimp_categorized_blog
+	 * Flush out the transients used in under_foundation_categorized_blog
 	 * @return void
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
-	function wimp_category_transient_flusher() {
+	function under_foundation_category_transient_flusher() {
 		// Like, beat it. Dig?
 		delete_transient( 'all_the_cool_cats' );
 	}
-	add_action( 'edit_category', 'wimp_category_transient_flusher' );
-	add_action( 'save_post',     'wimp_category_transient_flusher' );
+	add_action( 'edit_category', 'under_foundation_category_transient_flusher' );
+	add_action( 'save_post',     'under_foundation_category_transient_flusher' );

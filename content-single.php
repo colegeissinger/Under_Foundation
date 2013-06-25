@@ -1,10 +1,10 @@
 <?php
 	/**
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
+	 * @package Under_Foundation
+	 * @author Cole Geissinger <cole@colegeissinger.com>
 	 *
 	 * @version 1.0
-	 * @since   2.0
+	 * @since   1.0
 	 */
 ?>
 
@@ -13,42 +13,42 @@
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<div class="entry-meta">
-			<?php wimp_posted_on(); ?>
-		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
+			<?php under_foundation_posted_on(); ?>
+		</div><!--[END .entry-meta]-->
+	</header><!--[END .entry-header]-->
 
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'wimp' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'under_foundation' ),
 				'after'  => '</div>',
 			) );
 		?>
-	</div><!-- .entry-content -->
+	</div><!--[END .entry-content]-->
 
 	<footer class="entry-meta">
 		<?php
 			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __( ', ', 'wimp' ) );
+			$category_list = get_the_category_list( __( ', ', 'under_foundation' ) );
 
 			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', __( ', ', 'wimp' ) );
+			$tag_list = get_the_tag_list( '', __( ', ', 'under_foundation' ) );
 
-			if ( ! wimp_categorized_blog() ) {
+			if ( ! under_foundation_categorized_blog() ) {
 				// This blog only has 1 category so we just need to worry about tags in the meta text
 				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'wimp' );
+					$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'under_foundation' );
 				} else {
-					$meta_text = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'wimp' );
+					$meta_text = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'under_foundation' );
 				}
 
 			} else {
 				// But this blog has loads of categories so we should probably display them here
 				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'wimp' );
+					$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'under_foundation' );
 				} else {
-					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'wimp' );
+					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'under_foundation' );
 				}
 
 			} // end check for categories on this blog
@@ -62,6 +62,6 @@
 			);
 		?>
 
-		<?php edit_post_link( __( 'Edit', 'wimp' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-meta -->
-</article><!-- #post-## -->
+		<?php edit_post_link( __( 'Edit', 'under_foundation' ), '<span class="edit-link">', '</span>' ); ?>
+	</footer><!--[END .entry-meta]-->
+</article><!--[END #post-##]-->
