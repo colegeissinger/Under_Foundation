@@ -1,7 +1,6 @@
 /* =Content
 ----------------------------------------------- */
-
-//.sticky {  }
+.sticky { color:#000; }
 .hentry { margin: 0 0 1.5em; }
 .byline { display: none; }
 .single .byline, .group-blog .byline { display: inline; }
@@ -10,17 +9,56 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+.alignnone { margin: 5px 20px 20px 0; }
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
 
 
 /* =Asides
 ----------------------------------------------- */
-
 .blog .format-aside .entry-title, .archive .format-aside .entry-title { display: none; }
 
 
 /* =Media
 ----------------------------------------------- */
-
 .entry-content img.wp-smiley, .comment-content img.wp-smiley {
 	border: none;
 	margin-bottom: 0;
@@ -40,6 +78,9 @@
 		margin: 0.8075em 0;
 		text-align: center;
 	}
+	.alignnone { margin: 5px 20px 20px 0; }
+	.alignleft { margin: 5px 20px 20px 0; }
+	.alignright { margin: 5px 0 20px 20px; }
 }
 .site-content {
 	.gallery { margin-bottom: 1.5em;
@@ -51,23 +92,21 @@
 		dd { margin: 0; }
 	}
 }
-//.gallery-caption {  }
-//.site-content .gallery-columns-4 .gallery-item {
-	//img {  }
-//}
+.gallery-caption { font-weight:normal; }
+.site-content .gallery-columns-4 .gallery-item {
+	img { outline:none; }
+}
 
 
 
 
 /* =Comments
 ----------------------------------------------- */
-
 .comment-content a { word-wrap: break-word; }
-//.bypostauthor {  }
+.bypostauthor { color:#000; }
 
 /* =Widgets
 ----------------------------------------------- */
-
 .widget { margin: 0 0 1.5em;
 	select { max-width: 100%; } // Make sure select elements fit in widgets
 }

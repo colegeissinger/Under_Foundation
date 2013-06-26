@@ -7,8 +7,8 @@
 	 * @package Under_Foundation
 	 * @author Cole Geissinger <cole@colegeissinger.com>
 	 *
-	 * @version 1.0
-	 * @since   1.0
+	 * @version 0.1
+	 * @since   0.1
 	 */
 
 
@@ -17,8 +17,8 @@
 	 * @param  Array $args The array of options used in the wp_page_menu_args() filter
 	 * @return Array
 	 *
-	 * @version 1.0
-	 * @since   1.0
+	 * @version 0.1
+	 * @since   0.1
 	 */
 	function under_foundation_page_menu_args( $args ) {
 
@@ -35,8 +35,8 @@
 	 * @param  Array $classes The array of body classes
 	 * @return Array
 	 *
-	 * @version 1.0
-	 * @since   1.0
+	 * @version 0.1
+	 * @since   0.1
 	 */
 	function under_foundation_body_classes( $classes ) {
 
@@ -56,8 +56,8 @@
 	 * @param  Integer $id  The post ID
 	 * @return String
 	 *
-	 * @version 1.0
-	 * @since   1.0
+	 * @version 0.1
+	 * @since   0.1
 	 */
 	function under_foundation_enhanced_image_navigation( $url, $id ) {
 
@@ -81,8 +81,8 @@
 	 * @param  String $sep   The seperator character used in the title
 	 * @return String
 	 *
-	 * @version 1.0
-	 * @since   1.0
+	 * @version 0.1
+	 * @since   0.1
 	 */
 	function under_foundation_wp_title( $title, $sep ) {
 

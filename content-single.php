@@ -3,8 +3,8 @@
 	 * @package Under_Foundation
 	 * @author Cole Geissinger <cole@colegeissinger.com>
 	 *
-	 * @version 1.0
-	 * @since   1.0
+	 * @version 0.1
+	 * @since   0.1
 	 */
 ?>
 
@@ -18,6 +18,7 @@
 	</header><!--[END .entry-header]-->
 
 	<div class="entry-content">
+		<?php the_post_thumbnail(); ?>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
@@ -29,10 +30,10 @@
 
 	<footer class="entry-meta">
 		<?php
-			/* translators: used between list items, there is a space after the comma */
+			// translators: used between list items, there is a space after the comma
 			$category_list = get_the_category_list( __( ', ', 'under_foundation' ) );
 
-			/* translators: used between list items, there is a space after the comma */
+			// translators: used between list items, there is a space after the comma
 			$tag_list = get_the_tag_list( '', __( ', ', 'under_foundation' ) );
 
 			if ( ! under_foundation_categorized_blog() ) {
@@ -53,13 +54,7 @@
 
 			} // end check for categories on this blog
 
-			printf(
-				$meta_text,
-				$category_list,
-				$tag_list,
-				get_permalink(),
-				the_title_attribute( 'echo=0' )
-			);
+			printf( $meta_text, $category_list, $tag_list, get_permalink(), the_title_attribute( 'echo=0' ) );
 		?>
 
 		<?php edit_post_link( __( 'Edit', 'under_foundation' ), '<span class="edit-link">', '</span>' ); ?>

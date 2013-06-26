@@ -7,8 +7,8 @@
 	 * @package Under_Foundation
 	 * @author Cole Geissinger <cole@colegeissinger.com>
 	 *
-	 * @version 1.0
-	 * @since   1.0
+	 * @version 0.1
+	 * @since   0.1
 	 */
 
 	/**
@@ -16,8 +16,8 @@
 	 * @param  String $nav_id The ID to add to the nav tag
 	 * @return Void
 	 *
-	 * @version 1.0
-	 * @since   1.0
+	 * @version 0.1
+	 * @since   0.1
 	 */
 	if ( ! function_exists( 'under_foundation_content_nav' ) ) :
 		function under_foundation_content_nav( $nav_id ) {
@@ -78,8 +78,8 @@
 	 * @param  [type] $depth   [description]
 	 * @return Mixed
 	 *
-	 * @version 1.0
-	 * @since   1.0
+	 * @version 0.1
+	 * @since   0.1
 	 */
 	if ( ! function_exists( 'under_foundation_comment' ) ) :
 		function under_foundation_comment( $comment, $args, $depth ) {
@@ -135,8 +135,8 @@
 	 * Prints the attached image with a link to the next attached image.
 	 * @return void
 	 *
-	 * @version 1.0
-	 * @since   1.0
+	 * @version 0.1
+	 * @since   0.1
 	 */
 	if ( ! function_exists( 'under_foundation_the_attached_image' ) ) :
 		function under_foundation_the_attached_image() {
@@ -186,8 +186,8 @@
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 * @return void
 	 *
-	 * @version 1.0
-	 * @since   1.0
+	 * @version 0.1
+	 * @since   0.1
 	 */
 	if ( ! function_exists( 'under_foundation_posted_on' ) ) :
 		function under_foundation_posted_on() {
@@ -207,8 +207,8 @@
 	 * Returns true if a blog has more than 1 category
 	 * @return Boolean
 	 *
-	 * @version 1.0
-	 * @since   1.0
+	 * @version 0.1
+	 * @since   0.1
 	 */
 	function under_foundation_categorized_blog() {
 		if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
@@ -236,8 +236,8 @@
 	 * Flush out the transients used in under_foundation_categorized_blog
 	 * @return void
 	 *
-	 * @version 1.0
-	 * @since   1.0
+	 * @version 0.1
+	 * @since   0.1
 	 */
 	function under_foundation_category_transient_flusher() {
 		// Like, beat it. Dig?
